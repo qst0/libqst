@@ -6,14 +6,69 @@
 /*   By: myoung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/22 13:14:43 by myoung            #+#    #+#             */
-/*   Updated: 2016/09/22 13:15:59 by myoung           ###   ########.fr       */
+/*   Updated: 2016/09/22 13:50:28 by myoung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//ft_memset.c
-//ft_bzero.c
+void		*ft_memset(void *b, int c, size_t len)
+{
+	int				i;
+	unsigned char	*mem;
+
+	i = 0;
+	mem = (unsigned char *) b;
+	while (i < len)
+		mem[i++] = (unsigned char) c;
+	return (b);
+}
+
+#include <stdio.h>
+void		test_memset()
+{
+	printf("Testing memset vs ft_memset\n\n");
+	printf("ft_memset:\n");
+	char testdata[10] = "123456789";
+	printf("%s\n", testdata);
+	printf("%s\n", (char*) ft_memset((void*) testdata, 'a', 9));
+
+	printf("\nmemset:\n");
+	char testdatalib[10] = "123456789";
+	printf("%s\n", testdatalib);
+	printf("%s\n", (char*) memset((void*) testdatalib, 'a', 9));
+
+}
+
+void		ft_bzero(void *s, size_t n)
+{
+	unsigned char	*mem;
+	int				i;
+
+	i = 0;
+	mem = (unsigned char*) s;
+	while (i < n)
+		mem[i++] = 0;
+}
+
+void		test_bzero()
+{
+	printf("Testing bzero vs ft_bzero\n\n");
+	printf("ft_bezo:\n");
+	char testdata[10] = "123456789";
+	ft_bzero(testdata, 10);
+	if (testdata[9] == 0)
+		printf("Yes");
+	else
+		printf("No dice");
+
+	printf("\nbzero:\n");
+	char testdatalib[10] = "123456789";
+	ft_bzero(testdatalib, 10);
+	if (testdatalib[9] == 0)
+		printf("Yes");
+}
+
 // ABOVE ALREADY HAVE own files.
 
 void		*ft_memcpy(void *dst, const void *src, size_t n)
@@ -200,7 +255,6 @@ char		*ft_strncat(char *s1, const char *s2, size_t n)
 	s1[j] = '\0';
 	return (s1);
 }
-
 
 size_t		ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -417,8 +471,9 @@ int			ft_tolower(int c)
 	return (c);
 }
 
-#include <stdio.h>
 int			main(void)
 {
+	test_memset();
+	test_bzero();
 	return (0);
 }
