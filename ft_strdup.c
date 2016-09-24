@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myoung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/22 10:18:21 by myoung            #+#    #+#             */
-/*   Updated: 2016/09/23 11:56:32 by myoung           ###   ########.fr       */
+/*   Created: 2016/09/23 13:26:11 by myoung            #+#    #+#             */
+/*   Updated: 2016/09/23 13:39:39 by myoung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-void		*ft_memset(void *b, int c, size_t len)
+char		*ft_strdup(const char *s1)
 {
-	size_t			i;
-	unsigned char	*mem;
+	char			*copy;
+	int				len;
 
-	i = 0;
-	mem = (unsigned char *) b;
-	while (i < len)
-		mem[i++] = (unsigned char) c;
-	return (b);
+	len = 0;
+	while(s1[len])
+		len++;
+	copy = (char*) malloc(sizeof(char) * (len + 1));
+	len = 0;
+	while (s1[len])
+	{
+		copy[len] = s1[len];
+		len++;
+	}
+	copy[len] = '\0';
+	return (copy);
 }

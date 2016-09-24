@@ -6,7 +6,7 @@
 /*   By: myoung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/22 10:21:08 by myoung            #+#    #+#             */
-/*   Updated: 2016/09/22 10:23:39 by myoung           ###   ########.fr       */
+/*   Updated: 2016/09/23 11:57:41 by myoung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,10 @@
 void		ft_bzero(void *s, size_t n)
 {
 	unsigned char	*mem;
-	int				i;
+	size_t			i;
 
 	i = 0;
 	mem = (unsigned char*) s;
 	while (i < n)
 		mem[i++] = 0;
-	return (s);
 }

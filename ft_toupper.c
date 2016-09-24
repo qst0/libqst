@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myoung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/22 10:18:21 by myoung            #+#    #+#             */
-/*   Updated: 2016/09/23 11:56:32 by myoung           ###   ########.fr       */
+/*   Created: 2016/09/23 17:10:03 by myoung            #+#    #+#             */
+/*   Updated: 2016/09/23 17:10:04 by myoung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*ft_memset(void *b, int c, size_t len)
+int			ft_toupper(int c)
 {
-	size_t			i;
-	unsigned char	*mem;
-
-	i = 0;
-	mem = (unsigned char *) b;
-	while (i < len)
-		mem[i++] = (unsigned char) c;
-	return (b);
+	if (c >= 0141 && c <= 0173)
+		c -= 32;
+	return (c);
 }

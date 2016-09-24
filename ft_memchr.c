@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myoung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/22 10:18:21 by myoung            #+#    #+#             */
-/*   Updated: 2016/09/23 11:56:32 by myoung           ###   ########.fr       */
+/*   Created: 2016/09/23 12:34:33 by myoung            #+#    #+#             */
+/*   Updated: 2016/09/23 12:34:47 by myoung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*ft_memset(void *b, int c, size_t len)
+void		*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t			i;
 	unsigned char	*mem;
+	size_t			i;
 
+	mem = (unsigned char*) s;
 	i = 0;
-	mem = (unsigned char *) b;
-	while (i < len)
-		mem[i++] = (unsigned char) c;
-	return (b);
+	while (i < n)
+	{
+		if (mem[i] == (unsigned char) c)
+			return ((void*) &s[i]);
+		i++;
+	}
+	return (NULL);
 }
