@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myoung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/23 13:31:55 by myoung            #+#    #+#             */
-/*   Updated: 2016/09/25 13:46:06 by myoung           ###   ########.fr       */
+/*   Created: 2016/09/24 18:40:43 by myoung            #+#    #+#             */
+/*   Updated: 2016/09/25 12:49:53 by myoung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strncpy(char *dst, const char *src, unsigned int n)
+char	*ft_strtrim(const char *s)
 {
-	unsigned int	i;
+	int		i;
+	int		j;
+	char	*new;
 
 	i = 0;
-	while (src[i] && i < n)
+	while (*s == ' ' || *s == '\n' || *s == '\t')
+		s++;
+	i = ft_strlen(s) - 1;
+	if (i == -1)
+		return (ft_strnew(0));
+	while (!s[i] || s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
+		i--;
+	new = ft_strnew(++i);
+	if (!new)
+		return (NULL);
+	j = i;
+	i = 0;
+	while (i < j)
 	{
-		dst[i] = src[i];
+		new[i] = s[i];
 		i++;
 	}
-	while (i < n)
-	{
-		dst[i] = '\0';
-		i++;
-	}
-	return (dst);
+	return (new);
 }

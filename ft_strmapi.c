@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myoung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/23 13:31:55 by myoung            #+#    #+#             */
-/*   Updated: 2016/09/25 13:46:06 by myoung           ###   ########.fr       */
+/*   Created: 2016/09/24 16:38:15 by myoung            #+#    #+#             */
+/*   Updated: 2016/09/25 12:41:28 by myoung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strncpy(char *dst, const char *src, unsigned int n)
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
+	char			*map;
 	unsigned int	i;
 
+	map = ft_strnew(ft_strlen(s));
+	if (!map)
+		return (NULL);
 	i = 0;
-	while (src[i] && i < n)
+	while (s[i])
 	{
-		dst[i] = src[i];
+		map[i] = f(i, s[i]);
 		i++;
 	}
-	while (i < n)
-	{
-		dst[i] = '\0';
-		i++;
-	}
-	return (dst);
+	return (map);
 }

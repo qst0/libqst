@@ -6,7 +6,7 @@
 /*   By: myoung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/23 13:36:39 by myoung            #+#    #+#             */
-/*   Updated: 2016/09/23 13:37:01 by myoung           ###   ########.fr       */
+/*   Updated: 2016/09/25 13:07:45 by myoung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char		*ft_strstr(const char *big, const char *little)
 	find_index = 0;
 	i = 0;
 	if (little[0] == '\0')
-		return ((char*) &big[0]);
+		return ((char*)&big[0]);
 	while (big[i] != '\0')
 	{
 		if (big[i] == little[find_index])
@@ -30,7 +30,7 @@ char		*ft_strstr(const char *big, const char *little)
 			while (big[i] == little[find_index])
 			{
 				if (little[find_index++ + 1] == '\0')
-					return ((char*) &big[remember]);
+					return ((char*)&big[remember]);
 				i++;
 			}
 			find_index = 0;

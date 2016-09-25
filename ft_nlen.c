@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_nlen.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myoung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/23 13:31:55 by myoung            #+#    #+#             */
-/*   Updated: 2016/09/25 13:46:06 by myoung           ###   ########.fr       */
+/*   Created: 2016/09/25 12:25:55 by myoung            #+#    #+#             */
+/*   Updated: 2016/09/25 12:49:28 by myoung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strncpy(char *dst, const char *src, unsigned int n)
+int	ft_nlen(int n)
 {
-	unsigned int	i;
+	int len;
 
-	i = 0;
-	while (src[i] && i < n)
+	len = 1;
+	while (n / 10)
 	{
-		dst[i] = src[i];
-		i++;
+		n /= 10;
+		len++;
 	}
-	while (i < n)
-	{
-		dst[i] = '\0';
-		i++;
-	}
-	return (dst);
+	return (len);
 }

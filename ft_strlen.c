@@ -6,7 +6,7 @@
 /*   By: myoung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/23 13:02:40 by myoung            #+#    #+#             */
-/*   Updated: 2016/09/23 13:02:54 by myoung           ###   ########.fr       */
+/*   Updated: 2016/09/25 13:08:23 by myoung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t		ft_strlen(const char *s)
 	size_t			len;
 
 	len = 0;
-	while(s[len])
+	while (s[len])
 		len++;
 	return (len);
 }

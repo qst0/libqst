@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myoung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/23 13:31:55 by myoung            #+#    #+#             */
-/*   Updated: 2016/09/25 13:46:06 by myoung           ###   ########.fr       */
+/*   Created: 2016/09/24 18:30:25 by myoung            #+#    #+#             */
+/*   Updated: 2016/09/25 12:47:25 by myoung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strncpy(char *dst, const char *src, unsigned int n)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
-	unsigned int	i;
+	unsigned int	l1;
+	unsigned int	l2;
+	char			*new;
 
-	i = 0;
-	while (src[i] && i < n)
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	while (i < n)
-	{
-		dst[i] = '\0';
-		i++;
-	}
-	return (dst);
+	l1 = ft_strlen(s1);
+	l2 = ft_strlen(s2);
+	new = ft_strnew(l1 + l2);
+	if (!new)
+		return (NULL);
+	ft_strcpy(new, s1);
+	ft_strcat(new, s2);
+	return (new);
 }

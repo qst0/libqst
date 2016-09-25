@@ -6,7 +6,7 @@
 /*   By: myoung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/23 13:35:25 by myoung            #+#    #+#             */
-/*   Updated: 2016/09/23 13:35:27 by myoung           ###   ########.fr       */
+/*   Updated: 2016/09/25 12:40:22 by myoung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@ char		*ft_strchr(const char *s, int c)
 	unsigned int	i;
 
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
-		if(s[i] == (char) c)
-			return ((char*) &s[i]);
+		if (s[i] == (char)c)
+			return ((char*)&s[i]);
 		i++;
 	}
+	if (s[i] == (char)c)
+		return ((char*)&s[i]);
 	return (NULL);
 }

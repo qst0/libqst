@@ -6,7 +6,7 @@
 /*   By: myoung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/23 11:58:05 by myoung            #+#    #+#             */
-/*   Updated: 2016/09/23 11:58:18 by myoung           ###   ########.fr       */
+/*   Updated: 2016/09/25 13:41:04 by myoung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void		*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char	*d;
 	size_t			i;
 
-	s = (unsigned char*) src;
-	d = (unsigned char*) dst;
+	s = (unsigned char*)src;
+	d = (unsigned char*)dst;
 	i = 0;
 	while (i < n)
 	{

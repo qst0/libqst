@@ -1,31 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myoung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/23 13:31:55 by myoung            #+#    #+#             */
-/*   Updated: 2016/09/25 13:46:06 by myoung           ###   ########.fr       */
+/*   Created: 2016/09/24 14:06:51 by myoung            #+#    #+#             */
+/*   Updated: 2016/09/24 14:08:22 by myoung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strncpy(char *dst, const char *src, unsigned int n)
+void	ft_putnbr_fd(int nb, int fd)
 {
-	unsigned int	i;
+	int truncate;
+	int called;
 
-	i = 0;
-	while (src[i] && i < n)
+	called = 0;
+	truncate = 1000000000;
+	if (nb < 0)
 	{
-		dst[i] = src[i];
-		i++;
+		ft_putchar_fd('-', fd);
+		if (nb == -2147483648)
+		{
+			ft_putchar_fd('2', fd);
+			nb %= 1000000000;
+		}
+		nb *= -1;
 	}
-	while (i < n)
+	while (truncate > 0)
 	{
-		dst[i] = '\0';
-		i++;
+		if ((nb / truncate) != 0 || called == 1 || (nb == 0 && truncate == 1))
+		{
+			called = 1;
+			ft_putchar_fd((nb / truncate) + '0', fd);
+		}
+		nb %= truncate;
+		truncate /= 10;
 	}
-	return (dst);
 }
