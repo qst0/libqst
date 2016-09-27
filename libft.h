@@ -6,7 +6,7 @@
 /*   By: myoung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/22 10:01:55 by myoung            #+#    #+#             */
-/*   Updated: 2016/09/25 13:39:18 by myoung           ###   ########.fr       */
+/*   Updated: 2016/09/25 20:45:55 by myoung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,15 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+t_list				*ft_lstnew(void const *content, size_t content_size);
+t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void				ft_lstadd(t_list **alst, t_list *new);
+void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+
 int					ft_nlen(int n);
+void				ft_swapchar(char *p1, char *p2);
 char				*ft_strrev(char *s);
 
 #endif

@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myoung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/24 16:27:21 by myoung            #+#    #+#             */
-/*   Updated: 2016/09/26 09:00:36 by myoung           ###   ########.fr       */
+/*   Created: 2016/09/25 21:32:18 by myoung            #+#    #+#             */
+/*   Updated: 2016/09/26 08:39:46 by myoung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(const char *s, char (*f)(char))
+void	ft_lstdel(t_list **alst, void (*del)(void*, size_t))
 {
-	char			*map;
-	unsigned int	i;
-
-	if (!s || !f)
-		return (NULL);
-	map = ft_strnew(ft_strlen(s));
-	if (!map)
-		return (NULL);
-	i = 0;
-	while (s[i])
-	{
-		map[i] = f(s[i]);
-		i++;
-	}
-	return (map);
+	if (!alst || !*alst)
+		return ;
+	if ((*alst)->next)
+		ft_lstdel(&(*alst)->next, del);
+	del((*alst)->content, (*alst)->content_size);
+	free(*alst);
+	*alst = NULL;
 }

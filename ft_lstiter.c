@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myoung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/24 16:27:21 by myoung            #+#    #+#             */
-/*   Updated: 2016/09/26 09:00:36 by myoung           ###   ########.fr       */
+/*   Created: 2016/09/25 21:54:05 by myoung            #+#    #+#             */
+/*   Updated: 2016/09/26 08:40:23 by myoung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(const char *s, char (*f)(char))
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	char			*map;
-	unsigned int	i;
-
-	if (!s || !f)
-		return (NULL);
-	map = ft_strnew(ft_strlen(s));
-	if (!map)
-		return (NULL);
-	i = 0;
-	while (s[i])
+	if (!lst)
+		return ;
+	while (lst)
 	{
-		map[i] = f(s[i]);
-		i++;
+		f(lst);
+		lst = lst->next;
 	}
-	return (map);
 }

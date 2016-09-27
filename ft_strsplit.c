@@ -6,7 +6,7 @@
 /*   By: myoung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/24 19:28:07 by myoung            #+#    #+#             */
-/*   Updated: 2016/09/25 13:46:36 by myoung           ###   ########.fr       */
+/*   Updated: 2016/09/26 09:31:40 by myoung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ static int		ft_word_countc(const char *str, char c)
 	int i;
 	int has_word;
 
+	if (!str || !c)
+		return (0);
 	i = 0;
 	word_count = 0;
 	while (str[i] != '\0')
@@ -42,6 +44,8 @@ static int		ft_word_sizec(const char *str, char c)
 {
 	int i;
 
+	if (!str || !c)
+		return (0);
 	i = 0;
 	while (c == str[i] && str[i] != '\0')
 		str++;

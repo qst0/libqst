@@ -6,7 +6,7 @@
 /*   By: myoung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/24 18:22:32 by myoung            #+#    #+#             */
-/*   Updated: 2016/09/25 13:03:45 by myoung           ###   ########.fr       */
+/*   Updated: 2016/09/26 08:59:20 by myoung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	char			*new;
 	unsigned int	i;
 
+	if (!s)
+		return (NULL);
 	new = ft_strnew(len);
 	i = 0;
 	if (!new)

@@ -6,7 +6,7 @@
 /*   By: myoung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/24 18:30:25 by myoung            #+#    #+#             */
-/*   Updated: 2016/09/25 12:47:25 by myoung           ###   ########.fr       */
+/*   Updated: 2016/09/26 08:55:17 by myoung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	unsigned int	l2;
 	char			*new;
 
+	if (!s1 || !s2)
+		return (NULL);
 	l1 = ft_strlen(s1);
 	l2 = ft_strlen(s2);
 	new = ft_strnew(l1 + l2);
