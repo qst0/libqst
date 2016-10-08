@@ -6,7 +6,7 @@
 #    By: myoung <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/08/22 12:51:39 by myoung            #+#    #+#              #
-#    Updated: 2016/10/08 14:17:08 by myoung           ###   ########.fr        #
+#    Updated: 2016/10/08 14:27:50 by myoung           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,7 @@ FILENAMES	+=	ft_atoi.c \
 	ft_tolower.c \
 	ft_toupper.c \
 	ft_swapchar.c \
-	ft_swapmem.c \
+	ft_swapbyte.c \
 	ft_strrev.c \
 	ft_nlen.c \
 	ft_lstnew.c \

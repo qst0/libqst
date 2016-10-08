@@ -6,7 +6,7 @@
 /*   By: myoung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/22 10:01:55 by myoung            #+#    #+#             */
-/*   Updated: 2016/10/05 17:49:09 by myoung           ###   ########.fr       */
+/*   Updated: 2016/10/08 14:28:14 by myoung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 
 int					ft_nlen(int n);
 void				ft_swapchar(char *p1, char *p2);
-void				ft_swapmem(void *p1, void *p2);
+void				ft_swapbyte(void *p1, void *p2);
 char				*ft_strrev(char *s);
 
 #endif
