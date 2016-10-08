@@ -6,7 +6,7 @@
 /*   By: myoung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/22 10:01:55 by myoung            #+#    #+#             */
-/*   Updated: 2016/09/27 16:07:52 by myoung           ###   ########.fr       */
+/*   Updated: 2016/10/05 17:49:09 by myoung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 
 void				*ft_memset(void *b, int c, size_t len);
+char				*ft_strtrimc(const char *s, char c);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);

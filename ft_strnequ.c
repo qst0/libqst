@@ -6,7 +6,7 @@
 /*   By: myoung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/24 18:18:20 by myoung            #+#    #+#             */
-/*   Updated: 2016/09/26 08:59:56 by myoung           ###   ########.fr       */
+/*   Updated: 2016/10/08 14:15:37 by myoung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ int	ft_strnequ(const char *s1, const char *s2, size_t n)
 	}
 	if (!s1[i] && !s2[i])
 		return (1);
-	else
-		return (0);
+	if (n == 0)
+		return (1);
+	else if (s1[i] == s2[i])
+		return (1);
+	return (0);
 }

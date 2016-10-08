@@ -6,7 +6,7 @@
 #    By: myoung <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/08/22 12:51:39 by myoung            #+#    #+#              #
-#    Updated: 2016/09/27 16:07:14 by myoung           ###   ########.fr        #
+#    Updated: 2016/10/08 14:17:08 by myoung           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ CFLAGS		?=	-Wall -Wextra -Werror
 AR			?=	ar
 
 FILENAMES	+=	ft_atoi.c \
+	ft_strtrimc.c \
 	ft_bzero.c \
 	ft_isalnum.c \
 	ft_isalpha.c \
