@@ -6,7 +6,7 @@
 #    By: myoung <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/08/22 12:51:39 by myoung            #+#    #+#              #
-#    Updated: 2016/10/08 14:27:50 by myoung           ###   ########.fr        #
+#    Updated: 2016/10/11 19:44:45 by myoung           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ AR			?=	ar
 
 FILENAMES	+=	ft_atoi.c \
 	ft_strtrimc.c \
+	ft_realloc.c \
 	ft_bzero.c \
 	ft_isalnum.c \
 	ft_isalpha.c \

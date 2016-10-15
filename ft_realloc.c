@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: myoung <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: myoung <myoung@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/24 18:18:20 by myoung            #+#    #+#             */
-/*   Updated: 2016/10/14 21:44:35 by myoung           ###   ########.fr       */
+/*   Created: 2016/10/11 19:39:47 by myoung            #+#    #+#             */
+/*   Updated: 2016/10/11 19:43:13 by myoung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strnequ(const char *s1, const char *s2, size_t n)
+void		*ft_realloc(void *ptr, size_t size)
 {
-	if (!s1 && !s2)
-		return (1);
-	if (!s1 || !s2)
-		return (0);
-	return(!(ft_strncmp(s1, s2, n)));
+	void		*out;
+
+	out	= malloc(size * 2);
+	ft_memcpy(out, ptr, size);
+	free(ptr);
+	return (out);
 }

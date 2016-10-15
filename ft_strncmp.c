@@ -6,7 +6,7 @@
 /*   By: myoung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/23 13:43:49 by myoung            #+#    #+#             */
-/*   Updated: 2016/09/25 13:00:29 by myoung           ###   ########.fr       */
+/*   Updated: 2016/10/14 21:44:38 by myoung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ int			ft_strncmp(const char *s1, const char *s2, size_t n)
 	i = 0;
 	while (s1[i] && s1v[i] == s2v[i] && i < n)
 		i++;
+	if (i == n)
+		return (0);
 	return (s1v[i] - s2v[i]);
 }
