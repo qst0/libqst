@@ -6,18 +6,13 @@
 /*   By: myoung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/23 13:02:40 by myoung            #+#    #+#             */
-/*   Updated: 2016/10/19 15:32:34 by myoung           ###   ########.fr       */
+/*   Updated: 2016/11/04 08:17:22 by myoung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-size_t		ft_strlen(const char *s)
+size_t		ft_strlen(char *str)
 {
-	size_t			len;
-
-	len = 0;
-	while (s[len])
-		len++;
-	return (len);
+	return (*str ? 1 + ft_strlen(++str) : 0);
 }

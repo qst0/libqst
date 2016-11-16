@@ -6,7 +6,7 @@
 /*   By: myoung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/24 12:03:19 by myoung            #+#    #+#             */
-/*   Updated: 2016/10/19 15:32:27 by myoung           ###   ########.fr       */
+/*   Updated: 2016/11/04 08:17:24 by myoung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_putstr(const char *str)
 {
 	if (str)
-		write(1, str, ft_strlen(str));
+		write(1, str, ft_strlen((char*)str));
 }
