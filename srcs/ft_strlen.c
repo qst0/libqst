@@ -6,13 +6,13 @@
 /*   By: myoung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/23 13:02:40 by myoung            #+#    #+#             */
-/*   Updated: 2016/11/04 08:17:22 by myoung           ###   ########.fr       */
+/*   Updated: 2017/01/11 19:56:40 by myoung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-size_t		ft_strlen(char *str)
+size_t		ft_strlen(char const *str)
 {
 	return (*str ? 1 + ft_strlen(++str) : 0);
 }
